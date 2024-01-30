@@ -1,0 +1,139 @@
+:root {
+    --background-color: #f9f9f9;
+    --white-color: #ffffff;
+    --black-color: #202123;
+    --dark-gray-color: #666666;
+    --light-gray-color: #f6f6f6;
+    --primary-color: #2455C5;
+    --secondary-color: #A4D1FF;
+    --line: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* * {
+    outline: 1px solid tomato;
+} */
+
+.wrap {
+    min-width: 320px;
+}
+
+#header {
+    height: 100px;
+}
+
+.header_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    background: var(--white-color);
+    border-bottom: var(--line);
+}
+
+#header .header_wrap .w_inner {
+    display: flex;
+    justify-content: space-between;
+    line-height: 100px;
+}
+
+#header .header_wrap h1 a {
+    display: block;
+}
+
+#header .header_wrap h1 img {
+    height: 60px;
+}
+
+#header .header_wrap .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+#header .header_wrap .gnb>ul>li a {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#header .header_wrap .util {
+    display: flex;
+    gap: 15px;
+}
+
+#header .header_wrap .util a {
+    display: block;
+}
+
+#header .header_wrap .util .icon {
+    vertical-align: -6px;
+}
+
+
+
+
+
+
+.MainVisual .main_visual_slide .itm {
+    position: relative;
+    height: calc(100vh - 100px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.MainVisual .main_visual_slide .itm01 {
+    background-image: url(../images/main_visual1.jpg);
+}
+
+.MainVisual .main_visual_slide .itm02 {
+    background-image: url(../images/main_visual2.jpg);
+}
+
+.MainVisual .main_visual_slide .itm03 {
+    background-image: url(../images/main_visual3.jpg);
+}
+
+
+.MainVisual .main_visual_slide .w_inner {
+    position: relative;
+}
+
+.MainVisual .main_visual_slide .itm .slg {
+    position: absolute;
+    top: 186px;
+    left: 0;
+    right: 0;
+
+    padding: 0 15px;
+}
+
+.MainVisual .main_visual_slide .itm .slg span {
+    display: block;
+    margin: 0 0 4px 0;
+
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.MainVisual .main_visual_slide .itm .slg strong {
+    display: block;
+
+    color: var(--white-color);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 72px;
+    text-indent: -3px;
+}
+
+.MainVisual .main_visual_slide .itm .slg strong:nth-of-type(2) {
+    margin: 0 0 20px;
+}
+
+.MainVisual .main_visual_slide .itm .slg p {
+    line-height: 20px;
+    color: var(--white-color);
+    margin: 0 0 28px;
+}
