@@ -52,13 +52,13 @@
 
 @media (max-width:768px) {
     .default .title h2 {
-        font-size: 6vw;
+        font-size: 4vw;
     }
 }
 
 @media (max-width:500px) {
     .default .title h2 {
-        font-size: 6.5vw;
+        font-size: 4.5vw;
     }
 }
 

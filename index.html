@@ -255,8 +255,8 @@
                         <div class="tab_menu title">
                             <h3 class="on"><a href="">공지사항</a></h3>
                             <h3><a href="">펫도서관</a></h3>
-                            <a href="" class="icon">
-                                <span class="material-symbols-outlined">
+                            <a href="">
+                                <span class="material-symbols-outlined icon">
                                     add
                                 </span>
                             </a>
@@ -277,11 +277,6 @@
                                 <li><a href="">고양이의 사회생활</a></li>
                             </ul>
                         </div>
-                        <!-- <div class="more">
-                            <span class="material-symbols-outlined icon">
-                                add
-                            </span>
-                        </div> -->
                     </div>
                     <div class="right">
                         <div class="title">
@@ -315,12 +310,12 @@
                         </div>
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="tel:02-541-7515">
                                     <div class="text_box">
                                         <span>대표전화</span>
-                                        <strong>02.541.7515</strong>
+                                        <strong style="font-size: 22px;">02.541.7515</strong>
                                     </div>
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined icon">
                                         chevron_right
                                     </span>
                                 </a>
@@ -328,10 +323,10 @@
                             <li>
                                 <a href="">
                                     <div class="text_box">
-                                        <span>대표전화</span>
-                                        <strong>02.541.7515</strong>
+                                        <span>위치안내</span>
+                                        <strong style="font-size: 18px;">서울특별시 강남구 삼성로 614</strong>
                                     </div>
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined icon">
                                         chevron_right
                                     </span>
                                 </a>
@@ -339,50 +334,135 @@
                             <li>
                                 <a href="">
                                     <div class="text_box">
-                                        <span>대표전화</span>
-                                        <strong>02.541.7515</strong>
+                                        <span>주차장 안내</span>
                                     </div>
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined icon">
                                         chevron_right
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="" class="market_img">
                                     <img src="./images/event_banner.jpg" alt="">
+                                </a>
+                                <a href="" class="market">
+                                    <div class="text_box">
+                                        <span>직영 쇼핑몰</span>
+                                    </div>
+                                    <span class="material-symbols-outlined icon">
+                                        chevron_right
+                                    </span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="right">
+                        <!-- <div class="koggiri">
+                            코끼리 출동~
+                            <img src="./images/conping_bg.png" alt="" style="display: block;
+                            margin: 0 0 0 200px;
+                            height: 450px;
+                            ">
+                        </div> -->
                         <div class="map_box">
-                            <!-- * 카카오맵 - 지도퍼가기 -->
-                            <!-- 1. 지도 노드 -->
-                            <div id="daumRoughmapContainer1706711633558"
-                                class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                            <div id="map" style="width:100%;height:100%;"></div>
 
-                            <!--
-                            	2. 설치 스크립트
-                            	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                            -->
-                            <script charset="UTF-8" class="daum_roughmap_loader_script"
-                                src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                            <script type="text/javascript"
+                                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba10999a9ba24d06b1be31fb84788f46"></script>
+                            <script>
+                                var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+                                    mapOption = {
+                                        center: new kakao.maps.LatLng(37.514808592717976, 127.052857218381), // 지도의 중심좌표
+                                        level: 3 // 지도의 확대 레벨
+                                    };
 
-                            <!-- 3. 실행 스크립트 -->
-                            <script charset="UTF-8">
-                                new daum.roughmap.Lander({
-                                    "timestamp": "1706711633558",
-                                    "key": "2hwuf",
-                                    "mapWidth": "1050",
-                                    "mapHeight": "500"
-                                }).render();
+                                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                                // 지도에 마커를 표시합니다 
+                                var marker = new kakao.maps.Marker({
+                                    map: map,
+                                    position: new kakao.maps.LatLng(37.514808592717976, 127.052857218381)
+                                });
+
+                                // 커스텀 오버레이에 표시할 컨텐츠 입니다
+                                // 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
+                                // 별도의 이벤트 메소드를 제공하지 않습니다 
+                                var content = '<div class="marker_wrap">' +
+                                    '    <div class="marker_info">' +
+                                    '        <div class="marker_title">' +
+                                    '            청담우리동물병원' +
+                                    '            <div class="marker_close" onclick="closeOverlay()" title="닫기"></div>' +
+                                    '        </div>' +
+                                    '        <div class="marker_body">' +
+                                    '            <div class="marker_img">' +
+                                    '                <img src="./images/logo.png">' +
+                                    '           </div>' +
+                                    '            <div class="marker_desc">' +
+                                    '                <div class="ellipsis">서울특별시 강남구 삼성로 614</div>' +
+                                    '                <div class="marker_jibun ellipsis">(우) 06085(지번) 삼성동 70-6</div>' +
+                                    '                <div><a href="http://www.chungdamah.co.kr" target="_blank" class="marker_link">홈페이지</a></div>' +
+                                    '            </div>' +
+                                    '        </div>' +
+                                    '    </div>' +
+                                    '</div>';
+
+                                // 마커 위에 커스텀오버레이를 표시합니다
+                                // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+                                var overlay = new kakao.maps.CustomOverlay({
+                                    content: content,
+                                    map: map,
+                                    position: marker.getPosition()
+                                });
+
+                                // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+                                kakao.maps.event.addListener(marker, 'click', function () {
+                                    overlay.setMap(map);
+                                });
+
+                                // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
+                                function closeOverlay() {
+                                    overlay.setMap(null);
+                                }
                             </script>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <div class="footer_wrap">
+                <div class="inner footer_con">
+                    <a href="" class="f_logo">
+                        <img src="./images/foot_logo.jpg" alt="/">
+                    </a>
+                    <address class="copyright">
+                        <span>청담우리동물병원</span>
+                        <ul class="info">
+                            <li>서울특별시 강남구 삼성로 614</li>
+                            <li>Tel. 02-541-7515</li>
+                            <li>Fax. 02-541-7518</li>
+                            <li> e-mail. 5417515wr@chungdamah.co.kr</li>
+                        </ul>
+                        <ul class="rule">
+                            <li><a href="">이용약관</a></li>
+                            <li style="font-weight: 400;"><a href="">개인정보 취급방침</a></li>
+                            <li><a href="">청담우리소개</a></li>
+                        </ul>
+                        <div class="copy">
+                            Copyright &copy; 2021 CHUNGDAMWOORIAH. All Rights Reserved.
+                        </div>
+                    </address>
+                    <div class="sns_wrap">
+                        <a href="tel:02-541-7515">02.541.7515</a>
+                        <div class="sns">
+                            <a href=""><i class="xi-instagram"></i></a>
+                            <a href=""><i class="xi-youtube-play"></i></a>
+                            <a href=""><i class="xi-naver"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
